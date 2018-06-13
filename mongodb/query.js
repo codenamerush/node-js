@@ -6,7 +6,7 @@ MongoClient.connect(
 	function(err, db) {
 		if (err) throw err;
 		var dbo = db.db('mydb');
-		var query = { address: 'Park Lane 38' };
+		var query = { address: /^S/ };
 		dbo.collection('customers')
 			.find(query)
 			.toArray(function(err, result) {
